@@ -1,5 +1,6 @@
 # Private or licensed font assets
-assets/fonts/*.ttf
+#assets/fonts/*.ttf
+
 assets/fonts/*.otf
 !assets/fonts/.gitkeep
 
@@ -9,9 +10,9 @@ scenes/
 audio/
 cover/*.png
 contact-sheet.png
-
+*.mp4
 *.wav
-
+*.png
 
 # Dependencies and environment
 node_modules/
