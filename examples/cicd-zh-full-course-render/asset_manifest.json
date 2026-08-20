@@ -1,0 +1,134 @@
+{
+  "title": "到底什么是 CI/CD？为什么大公司依赖它，而小团队常常手动发版？",
+  "language": "Chinese",
+  "language_code": "cmn-CN",
+  "video": {
+    "path": "renders/cicd-zh-full-course-render_2026-08-20_09-14-37.mp4",
+    "duration_seconds": 231.533333,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000
+  },
+  "cover": "cover/cicd-zh-cover-1920x1080.png",
+  "contact_sheet": "contact-sheet.png",
+  "subtitle_files": {
+    "srt": "cicd_zh_subtitles.srt",
+    "vtt": "cicd_zh_subtitles.vtt"
+  },
+  "voice": {
+    "voice": "Charon",
+    "language_code": "cmn-CN",
+    "speed_multiplier": 1.28
+  },
+  "scenes": [
+    {
+      "scene": 1,
+      "slug": "release_risk",
+      "start_seconds": 0.0,
+      "end_seconds": 22.861,
+      "duration_seconds": 22.861,
+      "audio": "audio/scene01.wav",
+      "image": "scenes/01_release_risk.png",
+      "caption": "为什么大公司几乎离不开 CI/CD，而不少小团队仍靠人工发版，甚至只保留一段部署脚本？这不是谁更专业的站队题。真正的问题是：代码从提交到用户看到的过程中，哪些风险必须被系统拦住，哪些环节可以暂时由人判断。团队规模、变更频率、系统复杂度和失败代价，会给出不同答案。"
+    },
+    {
+      "scene": 2,
+      "slug": "continuous_integration",
+      "start_seconds": 23.511,
+      "end_seconds": 43.757,
+      "duration_seconds": 20.246,
+      "audio": "audio/scene02.wav",
+      "image": "scenes/02_continuous_integration.png",
+      "caption": "CI 是持续集成：开发者频繁把代码合入共享仓库，每次变更自动触发构建、测试和集成检查。它的核心不是“自动跑一下命令”，而是尽早发现回归，让每个人都基于可工作的版本继续开发。没有快速反馈，后面的部署自动化只会更快地放大问题。"
+    },
+    {
+      "scene": 3,
+      "slug": "delivery_deployment",
+      "start_seconds": 44.407,
+      "end_seconds": 70.177,
+      "duration_seconds": 25.77,
+      "audio": "audio/scene03.wav",
+      "image": "scenes/03_delivery_deployment.png",
+      "caption": "CD 有两种常见含义。持续交付把通过验证的变更自动送到生产就绪环境，最后是否上线仍可由人批准；持续部署则在满足所有门禁后直接面向用户发布。两者都不是“自动上线”的同义词。对风险较高、合规较强或测试尚未成熟的业务，保留人工审批往往是合理控制，而不是落后。"
+    },
+    {
+      "scene": 4,
+      "slug": "script_system",
+      "start_seconds": 70.827,
+      "end_seconds": 95.687,
+      "duration_seconds": 24.86,
+      "audio": "audio/scene04.wav",
+      "image": "scenes/04_script_system.png",
+      "caption": "所以，“我有一段发布脚本”不等于我已经有 CI/CD。脚本当然很重要，它可以是流水线中的一个作业；但完整交付还需要定义触发条件、隔离运行环境、测试门禁、制品版本、密钥管理、部署记录、回滚路径和失败告警。缺其中几项不代表不能发布，却意味着风险仍靠个人记忆和临场操作承担。"
+    },
+    {
+      "scene": 5,
+      "slug": "scale_governance",
+      "start_seconds": 96.337,
+      "end_seconds": 123.382,
+      "duration_seconds": 27.045,
+      "audio": "audio/scene05.wav",
+      "image": "scenes/05_scale_governance.png",
+      "caption": "大公司普遍依赖 CI/CD，通常不是因为它们喜欢更复杂的工具，而是人工操作在多人、多服务、多环境下会迅速失控。谁发布了哪个版本？同一制品是否经过相同测试？敏感配置谁能读取？失败能否立刻停止或回滚？这些问题需要可重复流程、权限边界和审计记录来回答。流水线把经验变成团队共同遵守的机制。"
+    },
+    {
+      "scene": 6,
+      "slug": "small_team",
+      "start_seconds": 124.032,
+      "end_seconds": 148.796,
+      "duration_seconds": 24.764,
+      "audio": "audio/scene06.wav",
+      "image": "scenes/06_small_team.png",
+      "caption": "小团队选择手动发版，也不必然错误。变更少、服务简单、负责人明确、上线窗口可控时，人工检查可能比搭建复杂平台更划算。但风险在于把流程锁在某个人的电脑和记忆里。更稳妥的起点，是把脚本提交进仓库，固定输入和输出，记录版本和结果，再逐步加入构建、测试、制品与部署审批。"
+    },
+    {
+      "scene": 7,
+      "slug": "maturity_path",
+      "start_seconds": 149.446,
+      "end_seconds": 176.952,
+      "duration_seconds": 27.506,
+      "audio": "audio/scene07.wav",
+      "image": "scenes/07_maturity_path.png",
+      "caption": "成熟度可以一层层增加：先让构建和单元测试自动运行；再生成不可变制品并保存版本；然后把部署写成可重复声明；随后增加环境审批、灰度或金丝雀、监控和回滚。每增加一层，都是在回答一个具体风险，而不是为了把 YAML 写得更长。CI/CD 的价值在于让交付能力随系统复杂度一起成长。"
+    },
+    {
+      "scene": 8,
+      "slug": "toolchain",
+      "start_seconds": 177.602,
+      "end_seconds": 203.537,
+      "duration_seconds": 25.935,
+      "audio": "audio/scene08.wav",
+      "image": "scenes/08_toolchain.png",
+      "caption": "主流工具不是互斥的“框架阵营”，而是不同位置的工具链。GitHub Actions 和 GitLab CI/CD 适合把代码托管与流水线结合；Jenkins 适合可自建、可扩展的 Pipeline as Code；CircleCI 等提供云托管流水线；Argo CD 和 Flux 偏向 Kubernetes 的 GitOps 持续交付；Tekton 则提供可组合的云原生流水线构件。它们经常一起出现。"
+    },
+    {
+      "scene": 9,
+      "slug": "decision_questions",
+      "start_seconds": 204.187,
+      "end_seconds": 231.024,
+      "duration_seconds": 26.837,
+      "audio": "audio/scene09.wav",
+      "image": "scenes/09_decision_questions.png",
+      "caption": "最后，用四个问题判断下一步：我们最常发生的发布失败是什么？哪些检查可以自动化且足够快？哪一步必须由人批准？失败后如何定位、停止和回滚？如果答案还模糊，就先不要追求全自动部署。先把一次发布做成可重复、可观察、可审计的流程，再让自动化逐步替代不必要的人工动作。"
+    }
+  ],
+  "social_posts": {
+    "json": "social_posts_cicd_zh.json",
+    "markdown": "social_posts_cicd_zh.md"
+  },
+  "supporting_files": [
+    "cicd_bilingual_narration_and_plan.md",
+    "cicd_research_notes.md",
+    "cicd_visual_review_notes.md",
+    "universal_safe_video_template.md"
+  ],
+  "package_exclusions": [
+    "assets/fonts/*",
+    "node_modules/",
+    ".git/",
+    "audio/*_raw.wav"
+  ]
+}

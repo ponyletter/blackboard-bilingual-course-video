@@ -1,0 +1,134 @@
+{
+  "title": "What Is CI/CD? Why Do Big Teams Rely on It While Small Teams Release Manually?",
+  "language": "English",
+  "language_code": "en-US",
+  "video": {
+    "path": "renders/cicd-en-full-course-render_2026-08-20_09-24-02.mp4",
+    "duration_seconds": 236.066667,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000
+  },
+  "cover": "cover/cicd-en-cover-1920x1080.png",
+  "contact_sheet": "contact-sheet.png",
+  "subtitle_files": {
+    "srt": "cicd_en_subtitles.srt",
+    "vtt": "cicd_en_subtitles.vtt"
+  },
+  "voice": {
+    "voice": "Charon",
+    "language_code": "en-US",
+    "speed_multiplier": 1.28
+  },
+  "scenes": [
+    {
+      "scene": 1,
+      "slug": "release_risk",
+      "start_seconds": 0.0,
+      "end_seconds": 23.372,
+      "duration_seconds": 23.372,
+      "audio": "audio/scene01.wav",
+      "image": "scenes/01_release_risk.png",
+      "caption": "Why do large organizations often rely on CI/CD, while many small teams still release manually or keep only a deployment script? This is not a question of who is more professional. The real question is which risks must be stopped by a system between a commit and a customer-facing release, and which decisions can still be made by people. Team size, change frequency, system complexity, and failure cost lead to different answers."
+    },
+    {
+      "scene": 2,
+      "slug": "continuous_integration",
+      "start_seconds": 24.022,
+      "end_seconds": 46.899,
+      "duration_seconds": 22.877,
+      "audio": "audio/scene02.wav",
+      "image": "scenes/02_continuous_integration.png",
+      "caption": "CI means continuous integration: developers frequently merge changes into a shared repository, and each change automatically triggers builds, tests, and integration checks. Its core is not merely running a command automatically. It is finding regressions early, so everyone can keep building on a working version. Without fast feedback, later deployment automation only amplifies problems faster."
+    },
+    {
+      "scene": 3,
+      "slug": "delivery_deployment",
+      "start_seconds": 47.549,
+      "end_seconds": 71.65,
+      "duration_seconds": 24.101,
+      "audio": "audio/scene03.wav",
+      "image": "scenes/03_delivery_deployment.png",
+      "caption": "CD commonly has two meanings. Continuous delivery automatically brings verified changes to a production-ready environment, while a person may still approve the final release. Continuous deployment sends changes to customers after all required gates pass. Neither term simply means “deploy automatically.” For high-risk, regulated, or insufficiently tested systems, human approval can be a sensible control rather than a sign of immaturity."
+    },
+    {
+      "scene": 4,
+      "slug": "script_system",
+      "start_seconds": 72.3,
+      "end_seconds": 96.098,
+      "duration_seconds": 23.798,
+      "audio": "audio/scene04.wav",
+      "image": "scenes/04_script_system.png",
+      "caption": "So, “I have a deployment script” does not mean “I have CI/CD.” A script matters and can be a job inside a pipeline. But reliable delivery also defines triggers, isolated runners, test gates, artifact versions, secret handling, deployment records, rollback paths, and failure alerts. Missing some of these does not make releases impossible; it means risk is still carried by personal memory and live operations."
+    },
+    {
+      "scene": 5,
+      "slug": "scale_governance",
+      "start_seconds": 96.748,
+      "end_seconds": 125.042,
+      "duration_seconds": 28.294,
+      "audio": "audio/scene05.wav",
+      "image": "scenes/05_scale_governance.png",
+      "caption": "Large organizations usually rely on CI/CD not because they enjoy more complicated tools, but because manual work becomes hard to control across many people, services, and environments. Who released which version? Did the same artifact pass the same tests? Who can read sensitive configuration? Can a failure stop or roll back quickly? These questions require repeatable workflows, permission boundaries, and audit records. Pipelines turn experience into mechanisms the whole team can follow."
+    },
+    {
+      "scene": 6,
+      "slug": "small_team",
+      "start_seconds": 125.692,
+      "end_seconds": 152.607,
+      "duration_seconds": 26.915,
+      "audio": "audio/scene06.wav",
+      "image": "scenes/06_small_team.png",
+      "caption": "Manual release is not automatically wrong for a small team. When changes are rare, services are simple, ownership is clear, and release windows are controlled, human checks may cost less than building a complex platform. The risk comes when the process is locked inside one person’s laptop and memory. A safer starting point is to commit scripts to the repository, make inputs and outputs repeatable, record versions and results, then gradually add builds, tests, artifacts, and deployment approval."
+    },
+    {
+      "scene": 7,
+      "slug": "maturity_path",
+      "start_seconds": 153.257,
+      "end_seconds": 179.902,
+      "duration_seconds": 26.645,
+      "audio": "audio/scene07.wav",
+      "image": "scenes/07_maturity_path.png",
+      "caption": "Delivery maturity can grow layer by layer: first automate builds and unit tests; then create immutable artifacts and retain versions; next make deployments repeatable and declarative; then add environment approvals, gradual rollout or canaries, monitoring, and rollback. Each layer answers a specific risk. It is not about writing longer YAML. CI/CD matters because delivery capability can grow with system complexity."
+    },
+    {
+      "scene": 8,
+      "slug": "toolchain",
+      "start_seconds": 180.552,
+      "end_seconds": 207.776,
+      "duration_seconds": 27.224,
+      "audio": "audio/scene08.wav",
+      "image": "scenes/08_toolchain.png",
+      "caption": "Mainstream tools are not rival “framework camps.” They occupy different places in a toolchain. GitHub Actions and GitLab CI/CD combine code hosting and workflows; Jenkins supports self-managed, extensible Pipeline as Code; services such as CircleCI provide hosted pipelines; Argo CD and Flux focus on GitOps continuous delivery for Kubernetes; and Tekton provides composable cloud-native pipeline building blocks. They often appear together."
+    },
+    {
+      "scene": 9,
+      "slug": "decision_questions",
+      "start_seconds": 208.426,
+      "end_seconds": 235.556,
+      "duration_seconds": 27.13,
+      "audio": "audio/scene09.wav",
+      "image": "scenes/09_decision_questions.png",
+      "caption": "Finally, use four questions to decide the next step: What release failure happens most often? Which checks can be automated and remain fast enough? Which step still needs human approval? How will we locate, stop, and roll back a failure? If those answers are unclear, do not chase fully automated deployment yet. First make one release repeatable, observable, and auditable; then let automation gradually replace unnecessary manual work."
+    }
+  ],
+  "social_posts": {
+    "json": "social_posts_cicd_en.json",
+    "markdown": "social_posts_cicd_en.md"
+  },
+  "supporting_files": [
+    "cicd_bilingual_narration_and_plan.md",
+    "cicd_research_notes.md",
+    "cicd_visual_review_notes.md",
+    "universal_safe_video_template.md"
+  ],
+  "package_exclusions": [
+    "assets/fonts/*",
+    "node_modules/",
+    ".git/",
+    "audio/*_raw.wav"
+  ]
+}
