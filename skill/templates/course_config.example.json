@@ -1,0 +1,43 @@
+{
+  "language": "zh",
+  "title": "示例主题：为什么团队需要可重复发布？",
+  "question_cover": {
+    "main": "为什么团队需要可重复发布？",
+    "sub": "手动流程一定不专业吗？"
+  },
+  "voice": {
+    "provider": "replace-with-configured-provider",
+    "voice": "informative-voice",
+    "language_code": "cmn-CN",
+    "tempo_multiplier": 1.28
+  },
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "total_duration_seconds": 0
+  },
+  "scenes": [
+    {
+      "scene": 1,
+      "slug": "opening_question",
+      "start_seconds": 0,
+      "end_seconds": 0,
+      "title_html": "为什么需要<em>可重复发布？</em>",
+      "support": "先识别交付风险，再讨论工具。",
+      "cards": [
+        "发布风险|什么可能出错？",
+        "团队规模|协作如何变化？",
+        "变更频率|多久发布一次？",
+        "系统复杂度|依赖有多少？",
+        "失败代价|影响有多大？",
+        "人工判断|哪里仍需保留？"
+      ],
+      "takeaway_lead": "先换问题：",
+      "takeaway_tail": "技术流程的价值在于控制风险。",
+      "narration": "替换为该场完整旁白。",
+      "audio": "audio/scene01.wav",
+      "image": "scenes/01_opening_question.png"
+    }
+  ]
+}

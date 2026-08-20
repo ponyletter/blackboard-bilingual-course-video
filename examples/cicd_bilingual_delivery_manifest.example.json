@@ -1,0 +1,22 @@
+{
+  "topic": "CI/CD bilingual educational video package",
+  "versions": {
+    "zh": {
+      "language": "Chinese",
+      "project_folder": "cicd-zh-full-course-render",
+      "video": "renders/cicd-zh-full-course-render_2026-08-20_09-14-37.mp4",
+      "cover": "cover/cicd-zh-cover-1920x1080.png",
+      "manifest": "cicd-zh-full-course-render/asset_manifest.json",
+      "scene_count": 9
+    },
+    "en": {
+      "language": "English",
+      "project_folder": "cicd-en-full-course-render",
+      "video": "renders/cicd-en-full-course-render_2026-08-20_09-24-02.mp4",
+      "cover": "cover/cicd-en-cover-1920x1080.png",
+      "manifest": "cicd-en-full-course-render/asset_manifest.json",
+      "scene_count": 9
+    }
+  },
+  "notes": "Chinese and English videos use the same topic structure but independent narration, timing, subtitles, scene assets, and social posts."
+}
