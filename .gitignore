@@ -9,9 +9,9 @@ scenes/
 audio/
 cover/*.png
 contact-sheet.png
-*.mp4
+
 *.wav
-*.png
+
 
 # Dependencies and environment
 node_modules/
