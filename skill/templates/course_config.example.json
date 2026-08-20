@@ -5,11 +5,17 @@
     "main": "为什么团队需要可重复发布？",
     "sub": "手动流程一定不专业吗？"
   },
-  "voice": {
+  "voice_profile": {
+    "profile_id": "male-zh-tech-v1",
     "provider": "replace-with-configured-provider",
-    "voice": "informative-voice",
+    "provider_model": "replace-with-model-name",
+    "voice_id": "replace-with-stable-male-voice-id",
+    "voice_name": "replace-with-stable-male-voice-name",
+    "gender": "male",
     "language_code": "cmn-CN",
-    "tempo_multiplier": 1.28
+    "speed_multiplier": 1.28,
+    "style_prompt": "Clear, confident adult male technical instructor. Maintain the same calm classroom delivery across every sentence.",
+    "reference_audio": "voice_reference.wav"
   },
   "video": {
     "width": 1920,
@@ -21,23 +27,137 @@
     {
       "scene": 1,
       "slug": "opening_question",
-      "start_seconds": 0,
-      "end_seconds": 0,
       "title_html": "为什么需要<em>可重复发布？</em>",
       "support": "先识别交付风险，再讨论工具。",
-      "cards": [
-        "发布风险|什么可能出错？",
-        "团队规模|协作如何变化？",
-        "变更频率|多久发布一次？",
-        "系统复杂度|依赖有多少？",
-        "失败代价|影响有多大？",
-        "人工判断|哪里仍需保留？"
-      ],
+      "cards": ["发布风险|什么可能出错？", "团队规模|协作如何变化？", "变更频率|多久发布一次？", "系统复杂度|依赖有多少？", "失败代价|影响有多大？", "人工判断|哪里仍需保留？"],
       "takeaway_lead": "先换问题：",
       "takeaway_tail": "技术流程的价值在于控制风险。",
-      "narration": "替换为该场完整旁白。",
-      "audio": "audio/scene01.wav",
-      "image": "scenes/01_opening_question.png"
+      "image": "scenes/01_opening_question.png",
+      "delivery_audio": "audio/scene01.wav",
+      "sentences": [
+        {"sentence": 1, "text": "一次发布真正的风险，来自哪些不可重复的人工步骤？", "audio": "audio/sentences/scene01/sentence01.wav"},
+        {"sentence": 2, "text": "先把这些步骤拆成可测量的流程。", "audio": "audio/sentences/scene01/sentence02.wav"}
+      ]
+    },
+    {
+      "scene": 2,
+      "slug": "shared_baseline",
+      "title_html": "先建立<em>共同基线</em>",
+      "support": "让每次变更都能被清楚验证。",
+      "cards": ["共享仓库|统一版本", "自动构建|检查可用性", "自动测试|验证行为", "快速反馈|尽早发现问题", "失败可见|减少猜测", "可工作版本|保持协作"],
+      "takeaway_lead": "先保证可验证，",
+      "takeaway_tail": "再增加自动化。",
+      "image": "scenes/02_shared_baseline.png",
+      "delivery_audio": "audio/scene02.wav",
+      "sentences": [
+        {"sentence": 1, "text": "团队首先需要一个所有人都能验证的共同基线。", "audio": "audio/sentences/scene02/sentence01.wav"},
+        {"sentence": 2, "text": "构建和测试让问题更早暴露。", "audio": "audio/sentences/scene02/sentence02.wav"}
+      ]
+    },
+    {
+      "scene": 3,
+      "slug": "release_boundary",
+      "title_html": "自动到哪里，<em>谁来批准？</em>",
+      "support": "自动化边界应由风险决定。",
+      "cards": ["生产就绪|先完成验证", "人工批准|保留判断", "自动门禁|满足检查", "风险控制|匹配业务", "审计记录|追溯决策", "渐进发布|缩小影响"],
+      "takeaway_lead": "自动化不是目的，",
+      "takeaway_tail": "可控发布才是。",
+      "image": "scenes/03_release_boundary.png",
+      "delivery_audio": "audio/scene03.wav",
+      "sentences": [
+        {"sentence": 1, "text": "自动化要到哪里，取决于失败的影响范围。", "audio": "audio/sentences/scene03/sentence01.wav"},
+        {"sentence": 2, "text": "高风险环节可以保留人工批准。", "audio": "audio/sentences/scene03/sentence02.wav"}
+      ]
+    },
+    {
+      "scene": 4,
+      "slug": "script_and_system",
+      "title_html": "脚本不是<em>完整系统</em>",
+      "support": "脚本重要，但还需要运行边界。",
+      "cards": ["触发条件|何时执行", "运行环境|可重复隔离", "测试门禁|失败停止", "制品版本|知道发布什么", "密钥管理|保护配置", "回滚告警|快速响应"],
+      "takeaway_lead": "脚本是原料，",
+      "takeaway_tail": "系统负责控制交付。",
+      "image": "scenes/04_script_and_system.png",
+      "delivery_audio": "audio/scene04.wav",
+      "sentences": [
+        {"sentence": 1, "text": "一段部署脚本可以解决局部问题。", "audio": "audio/sentences/scene04/sentence01.wav"},
+        {"sentence": 2, "text": "完整系统还要记录输入、结果和回滚路径。", "audio": "audio/sentences/scene04/sentence02.wav"}
+      ]
+    },
+    {
+      "scene": 5,
+      "slug": "team_scale",
+      "title_html": "规模放大的，是<em>不确定性</em>",
+      "support": "多人、多服务、多环境需要一致机制。",
+      "cards": ["多人协作|版本并行变化", "多服务|依赖增加", "多环境|保持一致", "权限边界|明确职责", "审计记录|知道谁做过", "快速回滚|限制损失"],
+      "takeaway_lead": "团队需要的不是复杂，",
+      "takeaway_tail": "而是可重复。",
+      "image": "scenes/05_team_scale.png",
+      "delivery_audio": "audio/scene05.wav",
+      "sentences": [
+        {"sentence": 1, "text": "当协作对象变多，人工一致性会迅速变难。", "audio": "audio/sentences/scene05/sentence01.wav"},
+        {"sentence": 2, "text": "流程需要把经验变成共同机制。", "audio": "audio/sentences/scene05/sentence02.wav"}
+      ]
+    },
+    {
+      "scene": 6,
+      "slug": "small_team_boundary",
+      "title_html": "小团队并非<em>不能手动</em>",
+      "support": "先减少对个人记忆的依赖。",
+      "cards": ["变更较少|人工可接受", "服务简单|边界清楚", "责任明确|决策更短", "脚本入库|过程可追溯", "记录版本|知道发布什么", "逐步演进|按风险增加"],
+      "takeaway_lead": "小团队的起点，",
+      "takeaway_tail": "是让过程可重复。",
+      "image": "scenes/06_small_team_boundary.png",
+      "delivery_audio": "audio/scene06.wav",
+      "sentences": [
+        {"sentence": 1, "text": "小团队手动发布并不一定错误。", "audio": "audio/sentences/scene06/sentence01.wav"},
+        {"sentence": 2, "text": "但过程不能只存在于某个人的记忆里。", "audio": "audio/sentences/scene06/sentence02.wav"}
+      ]
+    },
+    {
+      "scene": 7,
+      "slug": "maturity_path",
+      "title_html": "能力要按<em>风险演进</em>",
+      "support": "每一层自动化都解决一个真实问题。",
+      "cards": ["自动构建|先能构建", "自动测试|先拦错误", "不可变制品|保留版本", "声明部署|重复执行", "灰度发布|缩小影响", "监控回滚|恢复问题"],
+      "takeaway_lead": "每增加一层，",
+      "takeaway_tail": "都应对应一个具体风险。",
+      "image": "scenes/07_maturity_path.png",
+      "delivery_audio": "audio/scene07.wav",
+      "sentences": [
+        {"sentence": 1, "text": "成熟度应该随着风险逐层增加。", "audio": "audio/sentences/scene07/sentence01.wav"},
+        {"sentence": 2, "text": "不要为了形式而堆叠配置。", "audio": "audio/sentences/scene07/sentence02.wav"}
+      ]
+    },
+    {
+      "scene": 8,
+      "slug": "toolchain_roles",
+      "title_html": "工具按<em>职责组合</em>",
+      "support": "不要把工具链误解为单一阵营。",
+      "cards": ["代码托管|触发工作流", "构建测试|提供反馈", "制品仓库|保存版本", "持续交付|管理部署", "GitOps|同步期望状态", "可观测性|发现问题"],
+      "takeaway_lead": "先看职责，",
+      "takeaway_tail": "再选择实现工具。",
+      "image": "scenes/08_toolchain_roles.png",
+      "delivery_audio": "audio/scene08.wav",
+      "sentences": [
+        {"sentence": 1, "text": "工具链通常由不同职责的组件组合而成。", "audio": "audio/sentences/scene08/sentence01.wav"},
+        {"sentence": 2, "text": "先理解职责，再比较生态和成本。", "audio": "audio/sentences/scene08/sentence02.wav"}
+      ]
+    },
+    {
+      "scene": 9,
+      "slug": "decision_questions",
+      "title_html": "先让发布<em>可控</em>",
+      "support": "从最常见的失败开始改进。",
+      "cards": ["常见失败|优先解决什么", "自动检查|哪些足够快", "人工批准|哪里需判断", "故障定位|如何知道出错", "停止回滚|如何止损", "持续改进|下一层是什么"],
+      "takeaway_lead": "最好的流程，",
+      "takeaway_tail": "是适合当前风险的流程。",
+      "image": "scenes/09_decision_questions.png",
+      "delivery_audio": "audio/scene09.wav",
+      "sentences": [
+        {"sentence": 1, "text": "先识别最常发生的发布失败。", "audio": "audio/sentences/scene09/sentence01.wav"},
+        {"sentence": 2, "text": "再用自动化替代不必要的人工动作。", "audio": "audio/sentences/scene09/sentence02.wav"}
+      ]
     }
   ]
 }

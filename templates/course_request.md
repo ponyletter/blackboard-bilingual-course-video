@@ -16,14 +16,28 @@ Must avoid: [claims, brands, visual elements, opinions]
 Source materials: [URLs, papers, notes]
 Font assets available: [path or no]
 
+Voice lock:
+- Voice requirement: fixed adult male voice
+- Preferred provider/model/voice ID: [if known; otherwise ask agent to select and pin one]
+- One multilingual male voice required across Chinese and English: yes / no / provider-dependent
+- Speed multiplier: [for example: 1.28]
+- Reference sentence for voice check: [one short sentence]
+
+Caption contract:
+- Split narration into short complete sentences before TTS: required
+- Generate one final sentence WAV and one subtitle event per short sentence: required
+- Measure final sentence WAV duration with ffprobe and build cumulative timing: required
+- Deliver SRT + VTT + ASS + sentence_timeline.json: required
+
 Deliver per language:
 - 1920×1080 H.264/AAC MP4 at 30fps
 - Question-led cover image
+- `voice_profile.json` and `voice_reference.wav`
+- 9 scene delivery WAVs and all measured sentence WAVs
 - 9 scene PNGs with English filenames and a 3×3 contact sheet
-- 9 matching audio files
-- SRT, VTT, and asset_manifest.json
+- SRT, VTT, ASS, `sentence_timeline.json`, and `asset_manifest.json`
 - Social post JSON and Markdown
-- Light ZIP excluding fonts, node_modules, .git, and raw audio
+- Light ZIP excluding fonts, node_modules, .git, raw audio, and secrets
 ```
 
-Use this request as a contract. If an essential capability or source is unavailable, state the gap before creating final media.
+Use this request as a contract. If the target platform cannot pin a male voice or measure sentence WAVs with ffprobe, state the gap before creating any final media.

@@ -1,0 +1,15 @@
+{
+  "profile_id": "male-zh-tech-v1",
+  "provider": "replace-with-configured-provider",
+  "provider_model": "replace-with-model-name",
+  "voice_id": "replace-with-stable-male-voice-id",
+  "voice_name": "replace-with-stable-male-voice-name",
+  "gender": "male",
+  "language_code": "cmn-CN",
+  "speed_multiplier": 1.28,
+  "style_prompt": "Clear, confident adult male technical instructor. Maintain the same calm classroom delivery across every sentence.",
+  "reference_audio": "voice_reference.wav",
+  "reference_audio_sha256": "fill-after-generation",
+  "created_at": "YYYY-MM-DD",
+  "notes": "Do not store API keys here. Any provider/model/voice change requires an explicit re-baseline and approval."
+}
