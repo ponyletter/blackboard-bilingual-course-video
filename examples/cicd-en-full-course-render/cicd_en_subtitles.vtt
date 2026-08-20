@@ -1,0 +1,37 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:23.372
+Why do large organizations often rely on CI/CD, while many small teams still release manually or keep only a deployment script? This is not a question of who is more professional. The real question is which risks must be stopped by a system between a commit and a customer-facing release, and which decisions can still be made by people. Team size, change frequency, system complexity, and failure cost lead to different answers.
+
+2
+00:00:24.022 --> 00:00:46.899
+CI means continuous integration: developers frequently merge changes into a shared repository, and each change automatically triggers builds, tests, and integration checks. Its core is not merely running a command automatically. It is finding regressions early, so everyone can keep building on a working version. Without fast feedback, later deployment automation only amplifies problems faster.
+
+3
+00:00:47.549 --> 00:01:11.650
+CD commonly has two meanings. Continuous delivery automatically brings verified changes to a production-ready environment, while a person may still approve the final release. Continuous deployment sends changes to customers after all required gates pass. Neither term simply means “deploy automatically.” For high-risk, regulated, or insufficiently tested systems, human approval can be a sensible control rather than a sign of immaturity.
+
+4
+00:01:12.300 --> 00:01:36.098
+So, “I have a deployment script” does not mean “I have CI/CD.” A script matters and can be a job inside a pipeline. But reliable delivery also defines triggers, isolated runners, test gates, artifact versions, secret handling, deployment records, rollback paths, and failure alerts. Missing some of these does not make releases impossible; it means risk is still carried by personal memory and live operations.
+
+5
+00:01:36.748 --> 00:02:05.042
+Large organizations usually rely on CI/CD not because they enjoy more complicated tools, but because manual work becomes hard to control across many people, services, and environments. Who released which version? Did the same artifact pass the same tests? Who can read sensitive configuration? Can a failure stop or roll back quickly? These questions require repeatable workflows, permission boundaries, and audit records. Pipelines turn experience into mechanisms the whole team can follow.
+
+6
+00:02:05.692 --> 00:02:32.607
+Manual release is not automatically wrong for a small team. When changes are rare, services are simple, ownership is clear, and release windows are controlled, human checks may cost less than building a complex platform. The risk comes when the process is locked inside one person’s laptop and memory. A safer starting point is to commit scripts to the repository, make inputs and outputs repeatable, record versions and results, then gradually add builds, tests, artifacts, and deployment approval.
+
+7
+00:02:33.257 --> 00:02:59.902
+Delivery maturity can grow layer by layer: first automate builds and unit tests; then create immutable artifacts and retain versions; next make deployments repeatable and declarative; then add environment approvals, gradual rollout or canaries, monitoring, and rollback. Each layer answers a specific risk. It is not about writing longer YAML. CI/CD matters because delivery capability can grow with system complexity.
+
+8
+00:03:00.552 --> 00:03:27.776
+Mainstream tools are not rival “framework camps.” They occupy different places in a toolchain. GitHub Actions and GitLab CI/CD combine code hosting and workflows; Jenkins supports self-managed, extensible Pipeline as Code; services such as CircleCI provide hosted pipelines; Argo CD and Flux focus on GitOps continuous delivery for Kubernetes; and Tekton provides composable cloud-native pipeline building blocks. They often appear together.
+
+9
+00:03:28.426 --> 00:03:55.556
+Finally, use four questions to decide the next step: What release failure happens most often? Which checks can be automated and remain fast enough? Which step still needs human approval? How will we locate, stop, and roll back a failure? If those answers are unclear, do not chase fully automated deployment yet. First make one release repeatable, observable, and auditable; then let automation gradually replace unnecessary manual work.
